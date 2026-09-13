@@ -62,7 +62,8 @@
               <option value="微磨">微磨</option>
               <option value="旧痕">旧痕</option>
             </select>
-            <button class="primary" type="submit">加入</button>
+            <button class="primary" type="submit" id="typeSubmitBtn">加入</button>
+            <button type="button" id="cancelEditBtn" hidden>取消修改</button>
           </form>
           <div class="filter-row">
             <input id="inventorySearch" type="search" placeholder="搜索字或风格" />
@@ -94,6 +95,30 @@
           <h3>已保存草稿</h3>
           <div id="draftList" class="draft-list"></div>
         </aside>
+      </section>
+
+      <section class="panel log-panel" aria-label="操作日志">
+        <div class="panel-head">
+          <h2>操作日志</h2>
+          <span id="logCount"></span>
+        </div>
+        <div class="log-toolbar">
+          <div class="log-filters" id="logFilters">
+            <button type="button" data-log-filter="all" class="active">全部</button>
+            <button type="button" data-log-filter="type">字模</button>
+            <button type="button" data-log-filter="board">版面</button>
+            <button type="button" data-log-filter="draft">草稿</button>
+            <button type="button" data-log-filter="export">导出</button>
+            <button type="button" data-log-filter="restore">恢复</button>
+          </div>
+          <div class="log-tools">
+            <button type="button" id="logSortBtn">最新在前</button>
+            <button type="button" id="undoRestoreBtn" disabled>撤销最近一次恢复</button>
+          </div>
+        </div>
+        <div id="noticeArea" class="notice-area" hidden></div>
+        <div id="comparePanel" class="compare-panel" hidden></div>
+        <div id="logList" class="log-list"></div>
       </section>
     </main>
 
